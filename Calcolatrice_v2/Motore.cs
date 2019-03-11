@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calcolatrice_v2.Operazioni;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Calcolatrice_v2
     {
         private decimal? N1 { get; set; }
         private decimal? N2 { get; set; }
-        private string Operazione { get; set; } //TODO: cambia in un tipo IOperazione
+        private IOperazione Operazione { get; set; }
 
         public void Reset()
         {
@@ -33,14 +34,41 @@ namespace Calcolatrice_v2
 
         public void SalvaOperazione(string operatore)
         {
-            //TODO: salva l'operazione in base all'operatore scelto dall'utente
+            switch (operatore)
+            {
+                case "+":
+                    Operazione = new Addizione();
+                    break;
+                case "-":
+                    Operazione = new Sottrazione();
+                    break;
+                case "×":
+                    Operazione = new Moltiplicazione();
+                    break;
+                case "÷":
+                    Operazione = new Divisione();
+                    break;
+                default:
+                    break;
+            }
         }
 
         public string Esegui()
         {
-            decimal? R = null;
-            //TODO: chiama il metodo Calcola dell'operazione
-            return $"{R}";
+            if (N1 != null && 
+                N2 != null &&
+                Operazione != null)
+            {
+                Operazione.N1 = N1;
+                Operazione.N2 = N2;
+
+                decimal? R = Operazione.Calcola();
+                return $"{R}";
+            }
+            else
+            {
+                return "oooops";
+            }
         }
     }
 }

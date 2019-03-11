@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Operazioni\Addizione.cs" />
+    <Compile Include="Operazioni\Divisione.cs" />
+    <Compile Include="Operazioni\IOperazione.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +56,9 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Motore.cs" />
+    <Compile Include="Operazioni\Moltiplicazione.cs" />
+    <Compile Include="Operazioni\Operazione.cs" />
+    <Compile Include="Operazioni\Sottrazione.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
