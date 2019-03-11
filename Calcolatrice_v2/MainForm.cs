@@ -13,6 +13,7 @@ namespace Calcolatrice_v2
     public partial class MainForm : Form
     {
         private bool azzeradisplay = false;
+        Motore m = new Motore();
 
         public MainForm()
         {
@@ -26,7 +27,7 @@ namespace Calcolatrice_v2
 
         private void Cancella(object sender, EventArgs e)
         {
-            //TODO: chiama un metodo di Motore per cancellare tutte le variabili
+            m.Reset();
             txtDisplay.Text = "";
         }
 
@@ -42,18 +43,18 @@ namespace Calcolatrice_v2
         private void Operazione(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            //TODO: chiama il metodo di Motore per salvare il numero presente sul display
-            //TODO: chiama il metodo di Motore per salvare l'operazione
+            m.SalvaNumero(txtDisplay.Text);
+            m.SalvaOperazione(b.Text);
             azzeradisplay = true;
 
         }
 
         private void Uguale(object sender, EventArgs e)
         {
-            //TODO: chiama il metodo di Motore per salvare il numero presente sul display
-            //TODO: chiama il metodo di Motore per eseguire l'operazione salvata e scrivi sul display il risultato
+            m.SalvaNumero(txtDisplay.Text);
+            txtDisplay.Text = m.Esegui();
             azzeradisplay = true;
-            //TODO: chiama il metodo di Motore per cancellare tutte le variabili
+            m.Reset();
         }
 
         private void Numero(object sender, EventArgs e)
