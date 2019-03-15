@@ -280,7 +280,7 @@
             this.btnPiuMeno.TabIndex = 17;
             this.btnPiuMeno.Text = "±";
             this.btnPiuMeno.UseVisualStyleBackColor = true;
-            this.btnPiuMeno.Click += new System.EventHandler(this.Numero);
+            this.btnPiuMeno.Click += new System.EventHandler(this.PiuMeno);
             // 
             // MainForm
             // 
@@ -310,8 +310,10 @@
             this.Controls.Add(this.txtDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "MainForm";
             this.Text = "Calcolatrice";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDownDetector);
             this.ResumeLayout(false);
             this.PerformLayout();
 
