@@ -9,27 +9,31 @@ namespace Calcolatrice_v2
 {
     public class Motore
     {
-        private decimal? N1 { get; set; }
-        private decimal? N2 { get; set; }
+        //private decimal? N1 { get; set; }
+        //private decimal? N2 { get; set; }
         private IOperazione Operazione { get; set; }
+        private List<decimal> numeri = new List<decimal>();
+
 
         public void Reset()
         {
-            N1 = null;
-            N2 = null;
+            //N1 = null;
+            //N2 = null;
             Operazione = null;
+            numeri = new List<decimal>();
         }
 
         public void SalvaNumero(string numero)
         {
-            if (N1 == null)
-            {
-                N1 = Convert.ToDecimal(numero);
-            }
-            else
-            {
-                N2 = Convert.ToDecimal(numero);
-            }
+            //if (N1 == null)
+            //{
+            //    N1 = Convert.ToDecimal(numero);
+            //}
+            //else
+            //{
+            //    N2 = Convert.ToDecimal(numero);
+            //}
+            numeri.Add(Convert.ToDecimal(numero));
         }
 
         public void SalvaOperazione(string operatore)
@@ -55,12 +59,12 @@ namespace Calcolatrice_v2
 
         public string Esegui()
         {
-            if (N1 != null && 
-                N2 != null &&
-                Operazione != null)
+            if (Operazione != null &&
+                numeri != null)
             {
-                Operazione.N1 = N1;
-                Operazione.N2 = N2;
+                //Operazione.N1 = N1;
+                //Operazione.N2 = N2;
+                Operazione.Numeri = numeri;
 
                 decimal? R = Operazione.Calcola();
                 return $"{R}";

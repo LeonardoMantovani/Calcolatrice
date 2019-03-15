@@ -11,6 +11,8 @@ namespace Calcolatrice_v2.Operazioni
         decimal? N1 { get; set; }
         decimal? N2 { get; set; }
 
+        List<decimal> Numeri { get; set; }
+
         decimal? Calcola();
     }
 }

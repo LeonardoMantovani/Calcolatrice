@@ -10,7 +10,19 @@ namespace Calcolatrice_v2.Operazioni
     {
         public override decimal? Calcola()
         {
-            return N1 * N2;
+            decimal? result = null;
+            foreach (var N in Numeri)
+            {
+                if (result == null)
+                {
+                    result = N;
+                }
+                else
+                {
+                    result *= N;
+                }
+            }
+            return result;
         }
     }
 }

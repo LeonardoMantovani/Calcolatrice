@@ -11,6 +11,8 @@ namespace Calcolatrice_v2.Operazioni
         public decimal? N1 { get; set; }
         public decimal? N2 { get; set; }
 
+        public List<decimal> Numeri { get; set; }
+
         public abstract decimal? Calcola();
     }
 }

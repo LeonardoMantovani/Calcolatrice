@@ -59,7 +59,7 @@ namespace Calcolatrice_v2
         {
             Button b = (Button)sender;
 
-            InserisciNumero(b.Text);
+            RegistraNumero(b.Text);
         }
 
         private void PiuMeno(object sender, EventArgs e)
@@ -78,43 +78,43 @@ namespace Calcolatrice_v2
                 //NUMERI
                 case (int)Keys.D0:
                 case (int)Keys.NumPad0:
-                    InserisciNumero("0");
+                    RegistraNumero("0");
                     break;
                 case (int)Keys.D1:
                 case (int)Keys.NumPad1:
-                    InserisciNumero("1");
+                    RegistraNumero("1");
                     break;
                 case (int)Keys.D2:
                 case (int)Keys.NumPad2:
-                    InserisciNumero("2");
+                    RegistraNumero("2");
                     break;
                 case (int)Keys.D3:
                 case (int)Keys.NumPad3:
-                    InserisciNumero("3");
+                    RegistraNumero("3");
                     break;
                 case (int)Keys.D4:
                 case (int)Keys.NumPad4:
-                    InserisciNumero("4");
+                    RegistraNumero("4");
                     break;
                 case (int)Keys.D5:
                 case (int)Keys.NumPad5:
-                    InserisciNumero("5");
+                    RegistraNumero("5");
                     break;
                 case (int)Keys.D6:
                 case (int)Keys.NumPad6:
-                    InserisciNumero("6");
+                    RegistraNumero("6");
                     break;
                 case (int)Keys.D7:
                 case (int)Keys.NumPad7:
-                    InserisciNumero("7");
+                    RegistraNumero("7");
                     break;
                 case (int)Keys.D8:
                 case (int)Keys.NumPad8:
-                    InserisciNumero("8");
+                    RegistraNumero("8");
                     break;
                 case (int)Keys.D9:
                 case (int)Keys.NumPad9:
-                    InserisciNumero("9");
+                    RegistraNumero("9");
                     break;
                 //OPERATORI
                 case (int)Keys.Add:
@@ -141,7 +141,7 @@ namespace Calcolatrice_v2
             }
         }
 
-        private void InserisciNumero(string numero)
+        private void RegistraNumero(string numero)
         {
             if (azzeradisplay == true)
             {
